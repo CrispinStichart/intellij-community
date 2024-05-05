@@ -17,7 +17,7 @@ Get-ChildItem env:_INTELLIJ_FORCE_PREPEND_* | ForEach-Object {
 
 $Script = Get-Item "env:JEDITERM_SOURCE" -ErrorAction SilentlyContinue
 if ($Script -ne $null) {
-  Invoke-Expression $Script.Value
+  & $Script.Value
   Remove-Item "env:JEDITERM_SOURCE"
 }
 
